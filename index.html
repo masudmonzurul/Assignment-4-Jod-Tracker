@@ -20,209 +20,217 @@
 </head>
 
 <body class="bg-slate-100 max-w-4xl mx-auto  py-8 px-10">
-    <header class="w-11/12 mx-auto">
+    <header class="w-11/12 mx-auto ">
         <h2 class="mb-2 font-bold text-lg">Job Application Tracker</h2>
         <div class="flex justify-between gap-x-4">
             <div class="bg-slate-50 w-4/12 p-2">
                 <p class="text-xs">Total</p>
-                <P>0</P>
+                <P id="total-job">0</P>
             </div>
             <div class="bg-slate-50 w-4/12 p-2">
                 <p class="text-xs">Interview</p>
-                <P>0</P>
+                <P id="no-of-interview">0</P>
             </div>
             <div class="bg-slate-50 w-4/12 p-2">
                 <p class="text-xs">Rejected</p>
-                <P>0</P>
+                <P id="no-of-rejected">0</P>
             </div>
         </div>
         <hr class="m-3 mx-auto my-6 text-slate-300">
     </header>
 
     <main class="w-11/12 mx-auto">
-        <div class="flex justify-between">
-            <h2 class="text-lg mb-4">Available Jobs</h2>
-            <p class="text-slate-500">0 jobs</p>
+        <div class="top">
+            <div class="flex justify-between">
+                <h2 class="text-lg mb-4">Available Jobs</h2>
+                <p class="text-slate-500"><span id="noOfJobFiltered">0</span> jobs</p>
+            </div>
+            <div class="btn-tab mb-2 pb-3">
+                <button id="btn-all"
+                    class="btn btn-xs focus:bg-blue-600  focus:text-slate-50 text-slate-500 w-20 p-3">All</button>
+                <button id="btn-interview"
+                    class="btn btn-xs focus:bg-blue-600  focus:text-slate-50 text-slate-500 w-20 p-3">Interview</button>
+                <button id="btn-rejected"
+                    class="btn btn-xs focus:bg-blue-600  focus:text-slate-50 text-slate-500 w-20 p-3">Rejected</button>
+            </div>
         </div>
-        <div class="mb-2">
-            <button class="btn btn-xs focus:bg-blue-600  focus:text-slate-50 text-slate-500 w-20 p-3">All</button>
-            <button class="btn btn-xs focus:bg-blue-600  focus:text-slate-50 text-slate-500 w-20 p-3">Interview</button>
-            <button class="btn btn-xs focus:bg-blue-600  focus:text-slate-50 text-slate-500 w-20 p-3">Rejected</button>
-
-        </div>
-        <div class="flex gap-6 flex-col">
-            <div class="bg-slate-50 p-4 rounded-md">
+        <div id="job-container" class="flex gap-6 flex-col">
+            <div class="job-card bg-slate-50 p-4 rounded-md ">
                 <div class="bg-slate-50 flex justify-between items-center pt-4">
                     <p>Mobile First Corp</p>
-                    <div class="p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
-                        <i class="fa-regular fa-trash-can "></i>
+                    <div class="delete-btn-container p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
+                        <i class="delete-btn fa-regular fa-trash-can "></i>
                     </div>
                 </div>
-                <div>
+                <div class="btn-div">
                     <p class="text-slate-400">React Native Developer</p>
                     <p class="text-slate-400 ">Remote • Full-time • $130,000 - $175,000</p>
-                    <button class="bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
+                    <button class="job-status bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
 
                     <p class="text-xs pb-4">Build cross-platform mobile applications using React Native. Work on
                         products used by millions of users worldwide.</p>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
+                        class="interview bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTTED</button>
+                        class="rejected bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTED</button>
                 </div>
             </div>
-            <div class="bg-slate-50 p-4 rounded-md">
+            <div class="job-card bg-slate-50 p-4 rounded-md ">
                 <div class="bg-slate-50 flex justify-between items-center pt-4">
-                    <p>Mobile First Corp</p>
-                    <div class="p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
-                        <i class="fa-regular fa-trash-can "></i>
+                    <p>Mobile App</p>
+                    <div class="delete-btn-container p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
+                        <i class="delete-btn fa-regular fa-trash-can "></i>
                     </div>
                 </div>
-                <div>
+                <div class="btn-div">
                     <p class="text-slate-400">React Native Developer</p>
                     <p class="text-slate-400 ">Remote • Full-time • $130,000 - $175,000</p>
-                    <button class="bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
+                    <button class="job-status bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
 
                     <p class="text-xs pb-4">Build cross-platform mobile applications using React Native. Work on
                         products used by millions of users worldwide.</p>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
+                        class="interview bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTTED</button>
+                        class="rejected bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTED</button>
                 </div>
             </div>
-            <div class="bg-slate-50 p-4 rounded-md">
+            <div class="job-card bg-slate-50 p-4 rounded-md ">
                 <div class="bg-slate-50 flex justify-between items-center pt-4">
-                    <p>Mobile First Corp</p>
-                    <div class="p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
-                        <i class="fa-regular fa-trash-can "></i>
+                    <p>Web App</p>
+                    <div class="delete-btn-container p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
+                        <i class="delete-btn fa-regular fa-trash-can "></i>
                     </div>
                 </div>
-                <div>
+                <div class="btn-div">
                     <p class="text-slate-400">React Native Developer</p>
                     <p class="text-slate-400 ">Remote • Full-time • $130,000 - $175,000</p>
-                    <button class="bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
+                    <button class="job-status bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
 
                     <p class="text-xs pb-4">Build cross-platform mobile applications using React Native. Work on
                         products used by millions of users worldwide.</p>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
+                        class="interview bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTTED</button>
+                        class="rejected bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTED</button>
                 </div>
             </div>
-            <div class="bg-slate-50 p-4 rounded-md">
+            <div class="job-card bg-slate-50 p-4 rounded-md ">
                 <div class="bg-slate-50 flex justify-between items-center pt-4">
-                    <p>Mobile First Corp</p>
-                    <div class="p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
-                        <i class="fa-regular fa-trash-can "></i>
+                    <p>Auto Drive</p>
+                    <div class="delete-btn-container p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
+                        <i class="delete-btn fa-regular fa-trash-can "></i>
                     </div>
                 </div>
-                <div>
+                <div class="btn-div">
                     <p class="text-slate-400">React Native Developer</p>
                     <p class="text-slate-400 ">Remote • Full-time • $130,000 - $175,000</p>
-                    <button class="bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
+                    <button class="job-status bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
 
                     <p class="text-xs pb-4">Build cross-platform mobile applications using React Native. Work on
                         products used by millions of users worldwide.</p>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
+                        class="interview bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTTED</button>
+                        class="rejected bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTED</button>
                 </div>
             </div>
-            <div class="bg-slate-50 p-4 rounded-md">
+            <div class="job-card bg-slate-50 p-4 rounded-md ">
                 <div class="bg-slate-50 flex justify-between items-center pt-4">
-                    <p>Mobile First Corp</p>
-                    <div class="p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
-                        <i class="fa-regular fa-trash-can "></i>
+                    <p>Web Build</p>
+                    <div class="delete-btn-container p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
+                        <i class="delete-btn fa-regular fa-trash-can "></i>
                     </div>
                 </div>
-                <div>
+                <div class="btn-div">
                     <p class="text-slate-400">React Native Developer</p>
                     <p class="text-slate-400 ">Remote • Full-time • $130,000 - $175,000</p>
-                    <button class="bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
+                    <button class="job-status bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
 
                     <p class="text-xs pb-4">Build cross-platform mobile applications using React Native. Work on
                         products used by millions of users worldwide.</p>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
+                        class="interview bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTTED</button>
+                        class="rejected bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTED</button>
                 </div>
             </div>
-            <div class="bg-slate-50 p-4 rounded-md">
+            <div class="job-card bg-slate-50 p-4 rounded-md ">
                 <div class="bg-slate-50 flex justify-between items-center pt-4">
-                    <p>Mobile First Corp</p>
-                    <div class="p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
-                        <i class="fa-regular fa-trash-can "></i>
+                    <p>Python App</p>
+                    <div class="delete-btn-container p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
+                        <i class="delete-btn fa-regular fa-trash-can "></i>
                     </div>
                 </div>
-                <div>
+                <div class="btn-div">
                     <p class="text-slate-400">React Native Developer</p>
                     <p class="text-slate-400 ">Remote • Full-time • $130,000 - $175,000</p>
-                    <button class="bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
+                    <button class="job-status bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
 
                     <p class="text-xs pb-4">Build cross-platform mobile applications using React Native. Work on
                         products used by millions of users worldwide.</p>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
+                        class="interview bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTTED</button>
+                        class="rejected bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTED</button>
                 </div>
             </div>
-            <div class="bg-slate-50 p-4 rounded-md">
+            <div class="job-card bg-slate-50 p-4 rounded-md ">
                 <div class="bg-slate-50 flex justify-between items-center pt-4">
-                    <p>Mobile First Corp</p>
-                    <div class="p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
-                        <i class="fa-regular fa-trash-can "></i>
+                    <p>JS App</p>
+                    <div class="delete-btn-container p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
+                        <i class="delete-btn fa-regular fa-trash-can "></i>
                     </div>
                 </div>
-                <div>
+                <div class="btn-div">
                     <p class="text-slate-400">React Native Developer</p>
                     <p class="text-slate-400 ">Remote • Full-time • $130,000 - $175,000</p>
-                    <button class="bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
+                    <button class="job-status bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
 
                     <p class="text-xs pb-4">Build cross-platform mobile applications using React Native. Work on
                         products used by millions of users worldwide.</p>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
+                        class="interview bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTTED</button>
+                        class="rejected bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTED</button>
                 </div>
             </div>
-            <div class="bg-slate-50 p-4 rounded-md">
+            <div class="job-card bg-slate-50 p-4 rounded-md ">
                 <div class="bg-slate-50 flex justify-between items-center pt-4">
-                    <p>Mobile First Corp</p>
-                    <div class="p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
-                        <i class="fa-regular fa-trash-can "></i>
+                    <p>Back-End</p>
+                    <div class="delete-btn-container p-1 border-1 rounded-full text-slate-300 hover:text-slate-500">
+                        <i class="delete-btn fa-regular fa-trash-can "></i>
                     </div>
                 </div>
-                <div>
+                <div class="btn-div">
                     <p class="text-slate-400">React Native Developer</p>
                     <p class="text-slate-400">Remote • Full-time • $130,000 - $175,000</p>
-                    <button class="bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
+                    <button class="job-status bg-slate-200 text-sm p-2 rounded-sm">NOT APPLIED</button>
 
                     <p class="text-xs pb-4">Build cross-platform mobile applications using React Native. Work on
                         products used by millions of users worldwide.</p>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
+                        class="interview bg-slate-200 text-sm p-2 rounded-sm text-green-600 bg-transparent border-2 border-green-300 font-medium">INTERVIEW</button>
                     <button
-                        class="bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTTED</button>
+                        class="rejected bg-slate-200 text-sm p-2 rounded-sm text-red-600 bg-transparent border-2 border-red-300 font-medium">REJECTED</button>
                 </div>
+            </div>
+            
+            <div id="hide-unhide" class="bg-slate-50 p-4 rounded-md py-13 hidden">
+                <img width="60" src="https://img.icons8.com/color/48/google-docs--v1.png" alt="google-docs--v1"
+                    class="mx-auto" />
+
+                <h2 class="text-center pt-3 ">No jobs available</h2>
+                <p class="text-center text-slate-400">Check back soon for new job opportunities</p>
+
             </div>
         </div>
 
-        <div class="bg-slate-50 p-4 rounded-md py-13 ">
-
-            <img width="60" src="https://img.icons8.com/color/48/google-docs--v1.png" alt="google-docs--v1"
-                class="mx-auto" />
-
-            <h2 class="text-center pt-3 ">No jobs available</h2>
-            <p class="text-center text-slate-400">Check back soon for new job opportunities</p>
-
-        </div>
     </main>
+    <script src="/js/all.js" type="module"></script>
+    <script src="/js/interview.js"type="module"></script>
+    <script src="/js/rejected.js"type="module"></script>
+
 </body>
 
 </html>
