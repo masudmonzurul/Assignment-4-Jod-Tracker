@@ -24,39 +24,30 @@ document.getElementById('btn-rejected').addEventListener('click', function () {
 
     for (const item of jobStatusArray) {
         if (item.innerText !== 'REJECTED') {
-            // console.log(item);
             let jobCard = item.parentNode.parentNode;
-            // console.log(jobCard);
             jobCard.classList.add('hidden');
         }
     }
 
-
-
     // hide job card if job status change when interview btn active
 
     if (jobContainer.classList.contains('rejected')) {
-        let i = 1;
+        let i = 0;
+
         if (jobStatusArray.length === 0) {
             hiddenUnhiddenEle.classList.remove('hidden');
         } else {
             for (const item of jobStatusArray) {
-                // console.log(item);
-
                 if (item.innerText !== 'REJECTED') {
-                    // console.log(item);
                     let jobCard = item.parentNode.parentNode;
                     jobCard.classList.add('hidden');
                 } else if (item.innerText === 'REJECTED') {
                     i += 1;
                 }
-
-                // update job filter
-                // console.log(i === -1);
-                jobFilterLocation.innerText = i;
-                if (i === 0) {
-                    hiddenUnhiddenEle.classList.remove('hidden');
-                }
+            }
+            jobFilterLocation.innerText = i;
+            if (i === 0) {
+                hiddenUnhiddenEle.classList.remove('hidden');
             }
         }
     }

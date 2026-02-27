@@ -42,8 +42,8 @@ document.getElementById('btn-all').addEventListener('click', function () {
 
     jobContainer.classList.add('all');
     jobContainer.classList.remove('interview', 'rejected');
-    console.log(jobContainer);
-
+    
+    document.querySelector('#noOfJobFiltered').innerText = jobContainer.querySelectorAll('.job-card').length
     // add hidden to  id="hide-unhide"
     hiddenUnhiddenEle.classList.add('hidden');
 
@@ -125,9 +125,9 @@ jobContainer.addEventListener('click', function (event) {
             console.log(item);
 
             if (item.innerText !== 'INTERVIEW') {
-                // console.log(item);
                 let jobCard = item.parentNode.parentNode;
                 jobCard.classList.add('hidden');
+
             } else if (item.innerText === 'INTERVIEW') {
                 i += 1;
             }
@@ -145,20 +145,20 @@ jobContainer.addEventListener('click', function (event) {
     if (jobContainer.classList.contains('rejected')) {
         let i = 0;
         for (const item of jobStatusArray) {
-            // console.log(item);
+            
 
             if (item.innerText !== 'REJECTED') {
-                // console.log(item);
+                
                 let jobCard = item.parentNode.parentNode;
                 jobCard.classList.add('hidden');
             } else if (item.innerText === 'REJECTED') {
                 i += 1;
             }
-            console.log(i);
-            // // jobFilterLocation.innerText = 0;
-            jobFilterLocation.innerText = i;
-            // jobFilterLocation.innerText = totalJob;
         }
+        console.log(i);
+        // // jobFilterLocation.innerText = 0;
+        jobFilterLocation.innerText = i;
+        // jobFilterLocation.innerText = totalJob;
         console.log(i);
         if (i === 0) {
             hiddenUnhiddenEle.classList.remove('hidden');
